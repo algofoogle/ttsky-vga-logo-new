@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+Races the beam to generate a bouncing Tiny Tapeout logo.
 
 ## How to test
 
-Explain how to use your project
+Supply a 25MHz clock, reset the design, and observe Tiny-VGA-compatible outputs out `uo_out`.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Tiny VGA adapter and a suitable VGA monitor (or VGA=>HDMI converter).
