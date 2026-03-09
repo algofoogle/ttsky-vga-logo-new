@@ -1,10 +1,12 @@
 /*
- * Copyright (c) 2024 Tiny Tapeout LTD
+ * Copyright (c) 2026 Tiny Tapeout LTD
  * SPDX-License-Identifier: Apache-2.0
  * Author: Uri Shaked
  */
 
 `default_nettype none
+
+// `define HALF_Y_RES  // If defined, Y res of logo is halved (to reduce logic density).
 
 parameter LOGO_SIZE = 128;  // Size of the logo in pixels
 parameter DISPLAY_WIDTH = 640;  // VGA display width
@@ -74,7 +76,11 @@ module tt_um_algofoogle_vga_logo_new (
 
   bitmap_rom rom1 (
       .x(x[6:0]),
+`ifdef HALF_Y_RES
+      .y( {y[6:1], 1'b0} ),
+`else
       .y(y[6:0]),
+`endif // HALF_Y_RES
       .pixel(pixel_value)
   );
 
